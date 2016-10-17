@@ -681,15 +681,18 @@ public class ZipFile implements Closeable {
 
             if (hasUncompressedSize) {
                 ze.setSize(z64.getSize().getLongValue());
+                z64.setCompressedSize(new ZipEightByteInteger(ze.getCompressedSize()));
+                
             } else if (hasCompressedSize) {
                 z64.setSize(new ZipEightByteInteger(ze.getSize()));
+                ze.setCompressedSize(z64.getCompressedSize().getLongValue());
             }
 
-            if (hasCompressedSize) {
+       /*     if (hasCompressedSize) {
                 ze.setCompressedSize(z64.getCompressedSize().getLongValue());
             } else if (hasUncompressedSize) {
                 z64.setCompressedSize(new ZipEightByteInteger(ze.getCompressedSize()));
-            }
+            } ?*/
 
             if (hasRelativeHeaderOffset) {
                 offset.headerOffset =
