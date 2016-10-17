@@ -431,7 +431,7 @@ public class ZipFile implements Closeable {
                 };
             case BZIP2:
                 return new BZip2CompressorInputStream(bis);
-            case AES_ENCRYPTED:
+  /*          case AES_ENCRYPTED:
             case ENHANCED_DEFLATED:
             case EXPANDING_LEVEL_1:
             case EXPANDING_LEVEL_2:
@@ -443,7 +443,7 @@ public class ZipFile implements Closeable {
             case PPMD:
             case TOKENIZATION:
             case UNKNOWN:
-            case WAVPACK:
+            case WAVPACK:            */
             default:
                 throw new ZipException("Found unsupported compression method "
                                        + ze.getMethod());
